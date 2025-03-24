@@ -1,0 +1,42 @@
+﻿<Window x:Class="_2025_03_20.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2025_03_20"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid Background="Blue">
+        <StackPanel Name="nameList"
+            Background="Cyan"
+            Width="300"
+            Margin="192,0,300,109">
+            <Label 
+                HorizontalAlignment="Center"
+                FontSize="20">Name</Label>
+        </StackPanel>
+        <StackPanel Name="ageList"
+            Background="Red"
+            Width="300" Margin="492,0,0,109">
+            <Label 
+                HorizontalAlignment="Center"
+                FontSize="20">Age</Label>
+        </StackPanel>
+        <Label
+            Margin="249,310,-249,-310"
+            FontSize="25"
+            >Létrehozás</Label>
+        <TextBox
+            Background="White"
+            Height="30"
+            Margin="249,350,343,39"/>
+        <TextBox
+            Background="White"
+            Height="30"
+            Margin="466,350,126,39"/>
+        <Button
+            Width="100" Margin="682,331,10,23"/>
+        <StackPanel Name="lista"
+            Background="Green" Margin="0,0,600,0"/>
+    </Grid>
+</Window>
