@@ -74,6 +74,35 @@ namespace _2025_03_20
             return false;
         }
 
+        public async Task<bool> CreatePerson(string name, string age)
+        {
+            string url = serverUrl + "/createPerson";
+
+            try
+            {
+                var jsonInfo = new
+                {
+                    createName = name,
+                    createAge = age
+
+                };
+                string jsonStringified = JsonConvert.SerializeObject(jsonInfo);
+                HttpContent sendThis = new StringContent(jsonStringified, Encoding.UTF8, "Application/json");
+                HttpResponseMessage response = await client.PostAsync(url, sendThis);
+                response.EnsureSuccessStatusCode();
+                string result = await response.Content.ReadAsStringAsync();
+                JsonData data = JsonConvert.DeserializeObject<JsonData>(result);
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+            return false;
+        }
+
+
         public async Task<List<string>> Profiles()
         {
             List<string> all = new List<string>();
